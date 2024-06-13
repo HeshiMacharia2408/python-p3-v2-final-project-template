@@ -1,4 +1,8 @@
-import sqlite3
+from .artists import Artist
+from .albums import Album
 
-CONN = sqlite3.connect('company.db')
-CURSOR = CONN.cursor()
+# Artist.drop_table()
+# Album.drop_table()
+
+Album.create_table()
+Artist.create_table()
