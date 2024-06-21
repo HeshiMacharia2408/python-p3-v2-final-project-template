@@ -19,6 +19,7 @@ def main_menu():
             print('Please select a Valid Option.')
 
 def artists_menu():
+    #Displays the artists menu
     while True:
         print("\nArtists Menu")
         print("1. Add Artist")
@@ -39,6 +40,7 @@ def artists_menu():
             print("Please select a Valid Option.")
 
 def add_artist():
+    #Adds an artist to the artists table
     name = input("Enter artist name: ")
     genre = input("Enter artist genre: ")
     album_id = input("Enter album ID: ")
@@ -47,6 +49,7 @@ def add_artist():
     print(f"Artist {name} added successfully.")
 
 def edit_artist():
+    #Used to edit the details of an Artist
     id = int(input("Enter artist ID to edit: "))
     artist = models.Artist.find_by_id(id)
     if artist:
@@ -60,6 +63,7 @@ def edit_artist():
         print(f"No artist found with the ID {id}.")
 
 def delete_artist():
+    #Removes an artist from the artists table
     id = int(input("Enter artist ID to delete: "))
     artist = models.Artist.find_by_id(id)
     if artist:
@@ -69,6 +73,7 @@ def delete_artist():
         print(f"No artist found with the ID {id}.")
 
 def albums_menu():
+    #Displays the albums menu
     while True:
         print("\nAlbums Menu")
         print("1. Add Album")
@@ -89,6 +94,7 @@ def albums_menu():
             print("Please select a Valid Option.")
 
 def add_album():
+    #Adds an album to the albums table
     title = input("Enter album title: ")
     year_released = input("Enter year released: ")
     number_of_songs = input("Enter number of songs: ")
@@ -97,6 +103,7 @@ def add_album():
     print(f"Album {title} added successfully.")
 
 def edit_album():
+    #Used to edit the details of an album
     album_id = int(input("Enter album ID to edit: "))
     album = models.Album.find_by_id(album_id)
     if album:
@@ -110,6 +117,7 @@ def edit_album():
         print(f"No album found with the ID {album_id}.")
 
 def delete_album():
+    #Deletes an album from the albums table
     title = int(input("Enter album title to delete: "))
     album = models.Album.find_by_id(title)
     if album:

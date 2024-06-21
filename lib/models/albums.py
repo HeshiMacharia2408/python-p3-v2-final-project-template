@@ -16,6 +16,7 @@ class Album:
 
     @classmethod
     def create_table(cls):
+        #Shows the table of albums
         sql = """
             CREATE TABLE IF NOT EXISTS albums (
             id INTEGER PRIMARY KEY,
@@ -30,6 +31,7 @@ class Album:
 
     @classmethod
     def drop_table(cls):
+        #Shows the table of albums
         sql = "DROP TABLE IF EXISTS albums;"
         models.config.cursor.execute(sql)
         models.config.conn.commit()
@@ -62,6 +64,7 @@ class Album:
         return cls(*row) if row else None
 
     def update(self):
+        #Used to edit the details of an album
         sql = """
             UPDATE albums
             SET title = ?, year_released = ?, number_of_songs = ?, duration = ?
@@ -71,6 +74,7 @@ class Album:
         models.config.conn.commit()
 
     def delete(self):
+        #Deletes an album from the table
         sql = "DELETE FROM albums WHERE id = ?"
         models.config.cursor.execute(sql, (self.id,))
         models.config.conn.commit()

@@ -16,6 +16,7 @@ class Artist:
         return f"<Artist {self.name} {self.genre} {self.album_id} {self.albums}>"
 
     @classmethod
+    #creates a table of artists
     def create_table(cls):
         sql = """
             CREATE TABLE IF NOT EXISTS artists (
@@ -31,6 +32,7 @@ class Artist:
 
     @classmethod
     def drop_table(cls):
+        #Shows the table of artists
         sql = "DROP TABLE IF EXISTS artists;"
         models.config.cursor.execute(sql)
         models.config.conn.commit()
@@ -64,6 +66,7 @@ class Artist:
         return cls(*row) if row else None
 
     def update(self):
+        #Used to edit the details of an artist
         sql = """
             UPDATE artists
             SET name = ?, genre = ?, album_id = ?, albums = ?
@@ -73,7 +76,16 @@ class Artist:
         models.config.conn.commit()
 
     @classmethod
+    #Removes an artist from the table
     def delete(self, id):
         sql = "DELETE FROM artists WHERE id = ?"
         models.config.cursor.execute(sql, (id,))
         models.config.conn.commit()
+
+    @classmethod
+    def get_albums_for_artist(cls, artist_id):
+        sql = "SELECT * FROM albums WHERE artist_id = ?"
+        models.config.cursor.execute(sql, (artist_id,))
+        rows = models.config.cursor.fetchall()
+        albums = [albums(*row) for row in rows]
+        return albums
