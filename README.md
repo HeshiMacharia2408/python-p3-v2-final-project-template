@@ -1,13 +1,13 @@
-Project Name: Hema's Music Station
+Project Name: Hema's Music Discography Organizer.
 
 Done by: Heshi Macharia
 
-Date done: Thursday 13 June 2024
+Date done: Thursday 19 September 2024
 
-Description: It is a app used to display music artists and their albums.
+Description: This is a python app used to store and display discography of music artists; this includes their albums, their year released, duration and number of songs in the respective albums. Music artists can store and edit their information on the app.
 
-Technologies used: Python and Git
+Technologies used: Python and SQL
 
 Installation Requirements: Git
 
-Installation Process: Run git clone to download the documents from Github
+Installation Process: Run git clone to download the documents from Github. Ensure you have a virtual environment as well.
