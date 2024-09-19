@@ -1,4 +1,4 @@
-Project Name: Hema's Music Discography Organizer.
+Project Name: Hema's Music Discography Explorer.
 
 Done by: Heshi Macharia
 
